@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^15.0.7",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.97",
@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --testPathIgnorePatterns=src/*.interface.ts --detectOpenHandles",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

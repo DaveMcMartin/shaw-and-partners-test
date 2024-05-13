@@ -18,6 +18,13 @@ function App() {
                     <UsersList />
                 </div>
             </div>
+            <footer className="mt-4">
+                <div className="w-full flex justify-center items-center p-2">
+                    <p className="text-gray-900 text-sm">
+                        Made by <a href="https://www.davidmartins.net/" target="_blank" rel="noreferrer noopener" className="text-green-600 hover:text-green-900">David</a>
+                    </p>
+                </div>
+            </footer>
         </div>
     );
 }

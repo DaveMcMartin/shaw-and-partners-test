@@ -126,6 +126,7 @@ const UploadCsvForm: React.FC<UploadCsvFormProps> = ({
                         hover:file:bg-green-100
                         hover:file:cursor-pointer"
                         disabled={isUploading}
+                        title="Select a CSV file to upload"
                     />
                     <small className="text-gray-600 text-sm mt-1">Accepts CSV files up to 50MB in size.</small>
                 </fieldset>

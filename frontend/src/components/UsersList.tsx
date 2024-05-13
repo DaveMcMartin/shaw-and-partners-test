@@ -38,7 +38,10 @@ const UsersList = () => {
                 onClickImportUsers={() => setIsUploadModelOpen(true)}
             />
             <UploadCsvForm
-                onUsersUploaded={() => refreshUsers()} className="mt-4"
+                onUsersUploaded={() => {
+                    refreshUsers();
+                    setIsUploadModelOpen(false);
+                }} className="mt-4"
                 isOpen={isUploadModelOpen}
                 onClose={() => setIsUploadModelOpen(false)}
             />

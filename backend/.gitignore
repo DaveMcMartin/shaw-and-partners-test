@@ -2,6 +2,9 @@
 node_modules
 *.log
 *.gz
+*.db
+
+uploads/
 
 # Coveralls
 .nyc_output

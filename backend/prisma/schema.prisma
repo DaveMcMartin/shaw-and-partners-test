@@ -16,4 +16,5 @@ model User {
   city          String
   country       String
   favoriteSport String
+  searchIndexed String
 }

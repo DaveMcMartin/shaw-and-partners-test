@@ -1,12 +1,19 @@
 import express from "express";
+import cors from "cors";
+import Files from "./routes/files";
+import Users from "./routes/users";
 
 const router = express();
 const port = 3000;
 
-router.post("/api/files", (req, res) => {});
+// Bootstrap the application
+router.use(cors());
+router.use(express.json());
 
-router.get("/api/users", (req, res) => {});
+// Endpoints
+router.use("/api", Files);
+router.use("/api", Users);
 
 router.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+    console.log(`Server is running at http://localhost:${port}`);
 });

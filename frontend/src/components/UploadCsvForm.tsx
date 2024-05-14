@@ -37,12 +37,13 @@ const UploadCsvForm: React.FC<UploadCsvFormProps> = ({
             return;
         }
 
+        const apiUrl = process.env.REACT_APP_API_URI || 'http://localhost:3000/';
         const formData = new FormData();
         formData.append("file", fileInput.files?.[0] as Blob);
 
         let isOk = false;
 
-        fetch(`${process.env.REACT_APP_API_URI}api/files`, {
+        fetch(`${apiUrl}api/files`, {
             method: "POST",
             body: formData,
         })

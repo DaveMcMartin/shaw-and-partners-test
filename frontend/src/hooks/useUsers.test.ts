@@ -3,6 +3,8 @@ import { User } from "../models/User.interface";
 import { useUsers } from "./useUsers";
 
 describe('useUsers', () => {
+    const apiUrl = process.env.REACT_APP_API_URI || 'http://localhost:3000/';
+
     afterEach(() => {
         jest.restoreAllMocks();
     });
@@ -28,7 +30,7 @@ describe('useUsers', () => {
         const { result } = renderHook(() => useUsers({ search: null }));
 
         expect(fetch).toHaveBeenCalledTimes(1);
-        expect(fetch).toHaveBeenCalledWith(`${process.env.REACT_APP_API_URI}api/users?q=`);
+        expect(fetch).toHaveBeenCalledWith(`${apiUrl}api/users?q=`);
 
         await waitFor(() => {
             expect(result.current.users).toEqual(dataToReturn.data);
@@ -51,7 +53,7 @@ describe('useUsers', () => {
         const { result } = renderHook(() => useUsers({ search: searchText }));
 
         expect(fetch).toHaveBeenCalledTimes(1);
-        expect(fetch).toHaveBeenCalledWith(`${process.env.REACT_APP_API_URI}api/users?q=${searchText}`);
+        expect(fetch).toHaveBeenCalledWith(`${apiUrl}api/users?q=${searchText}`);
 
         await waitFor(() => {
             expect(result.current.users).toEqual(dataToReturn.data);
@@ -77,7 +79,7 @@ describe('useUsers', () => {
         const { result } = renderHook(() => useUsers({ search: null }));
 
         expect(fetch).toHaveBeenCalledTimes(1);
-        expect(fetch).toHaveBeenCalledWith(`${process.env.REACT_APP_API_URI}api/users?q=`);
+        expect(fetch).toHaveBeenCalledWith(`${apiUrl}api/users?q=`);
 
         await waitFor(() => {
             expect(result.current.usersError).toEqual(errorToReturn.message);
@@ -99,7 +101,7 @@ describe('useUsers', () => {
         const { result } = renderHook(() => useUsers({ search: null }));
 
         expect(fetch).toHaveBeenCalledTimes(1);
-        expect(fetch).toHaveBeenCalledWith(`${process.env.REACT_APP_API_URI}api/users?q=`);
+        expect(fetch).toHaveBeenCalledWith(`${apiUrl}api/users?q=`);
 
         await waitFor(() => {
             expect(result.current.usersError).toEqual(errorMessage);
@@ -131,7 +133,7 @@ describe('useUsers', () => {
         const { result } = renderHook(() => useUsers({ search: null }));
 
         expect(fetch).toHaveBeenCalledTimes(1);
-        expect(fetch).toHaveBeenCalledWith(`${process.env.REACT_APP_API_URI}api/users?q=`);
+        expect(fetch).toHaveBeenCalledWith(`${apiUrl}api/users?q=`);
 
         await waitFor(() => {
             expect(result.current.users).toEqual(dataToReturn.data);
@@ -163,7 +165,7 @@ describe('useUsers', () => {
             expect(fetch).toHaveBeenCalledTimes(2);
         });
 
-        expect(fetch).toHaveBeenNthCalledWith(2, `${process.env.REACT_APP_API_URI}api/users?q=`);
+        expect(fetch).toHaveBeenNthCalledWith(2, `${apiUrl}api/users?q=`);
 
         await waitFor(() => {
             expect(result.current.users).toEqual(newDataToReturn.data);

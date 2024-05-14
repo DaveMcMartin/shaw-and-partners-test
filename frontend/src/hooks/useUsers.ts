@@ -16,7 +16,9 @@ export const useUsers = ({
   useEffect(() => {
     setIsLoading(true);
 
-    fetch(`${process.env.REACT_APP_API_URI}api/users?q=${search || ''}`)
+    const apiUrl = process.env.REACT_APP_API_URI || 'http://localhost:3000/';
+
+    fetch(`${apiUrl}api/users?q=${search || ''}`)
       .then((res) => res.json())
       .then((data) => {
         if ( !data.data || !Array.isArray(data.data)) {

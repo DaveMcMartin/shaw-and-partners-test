@@ -1,0 +1,20 @@
+# npm
+node_modules
+*.log
+*.gz
+*.db
+
+uploads/
+
+# typescript compilation
+dist/
+
+# Coveralls
+.nyc_output
+coverage
+
+# Benchmarking
+benchmarks/graphs
+
+# ignore additional files using core.excludesFile
+# https://git-scm.com/docs/gitignore

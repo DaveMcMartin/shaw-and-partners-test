@@ -5,6 +5,10 @@ import Users from "./routes/users";
 
 const router = express();
 
+if( !process.env.DATABASE_URL ) {
+    process.env.DATABASE_URL = "file:./dev.db";
+}
+
 // Bootstrap the application
 router.use(cors());
 router.use(express.json());

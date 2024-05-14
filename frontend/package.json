@@ -1,6 +1,6 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "shaw-n-partners-tht-frontend",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -22,7 +22,8 @@
     "dev": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --testPathIgnorePatterns=src/*.interface.ts --detectOpenHandles",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "npx serve -s build -p 4000"
   },
   "eslintConfig": {
     "extends": [

@@ -22,8 +22,7 @@
     "dev": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --testPathIgnorePatterns=src/*.interface.ts --detectOpenHandles",
-    "eject": "react-scripts eject",
-    "postinstall": "npx prisma db push"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

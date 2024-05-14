@@ -26,9 +26,6 @@ COPY --link prisma .
 
 RUN npm ci --include=dev
 
-# Generate Prisma Client
-RUN npx prisma generate
-
 # Copy application code
 COPY --link . .
 
